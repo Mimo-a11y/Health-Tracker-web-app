@@ -1,0 +1,16 @@
+{
+  "name": "medhouse-nepal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tw:build": "tailwindcss build ./src/css/tailwind.css -o ./public/css/tailwind.css"
+  },
+  "author": "Mimona Karki",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.3.2",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.7"
+  }
+}
