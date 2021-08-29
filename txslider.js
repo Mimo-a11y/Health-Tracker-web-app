@@ -10,7 +10,7 @@ var data = [
     },
 ];
 var tx_conf = {
-    effect: "left", 
+    effect: "down", 
     timer: 1,
     infinit: true
 }
