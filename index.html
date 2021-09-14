@@ -26,8 +26,8 @@
     </header>
     <section class="h-5/6 mt-50 bg-cover bg-bottom bg-gray-700 bg-blend-overlay bg-fixed" style="background-image: url('images/search directory.jpg')">
     </section>
-    <section class=" flex h-5/6 items-center bg-contain bg-right bg-no-repeat" style="background-image: url('images/Doc.png')">
-        <div class="flex flex-col items-center ml-24 h-5/6 w-2/5 space-y-5 bg-white shadow-lg rounded-md">
+    <section class=" flex h-5/6 items-center space-x-5">
+        <div class="flex flex-col items-center ml-11 h-5/6 w-1/4 space-y-5 bg-white shadow-lg rounded-md">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mt-5" viewBox="0 0 20 20" fill="#EF4444">
                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
               </svg> 
@@ -46,8 +46,8 @@
             </div>
             <button class="bg-red-500 text-white py-2 px-24 rounded-md hover:bg-red-700">Search</button>
         </div>
+        <div id='map' class="h-4/5 w-4/5 shadow-lg rounded-md"></div>
     </section>
-    <div id='map' style='width: 400px; height: 300px;'></div>
     <footer>
         <div class="flex justify-center bg-gray-500 text-white text-xs p-3">
             <p>2021 All rights reserved &#169; MedHouse</p>
@@ -77,12 +77,12 @@
 map.on('load', () => {
 // Load an image from an external URL.
 map.loadImage(
-'https://images.unsplash.com/photo-1560582861-45078880e48e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
+'https://i.ibb.co/9WNxhfv/doc-icon.png',
 (error, image) => {
 if (error) throw error;
  
 // Add the image to the map style.
-map.addImage('cat', image);
+map.addImage('doc-icon', image);
  
 // Add a data source containing one point feature.
 map.addSource('point', {
@@ -94,7 +94,7 @@ map.addSource('point', {
 'type': 'Feature',
 'geometry': {
 'type': 'Point',
-'coordinates': [-77.4144, 25.0759]
+'coordinates': [85.32,27.71]
 }
 }
 ]
@@ -107,8 +107,8 @@ map.addLayer({
 'type': 'symbol',
 'source': 'point', // reference the data source
 'layout': {
-'icon-image': 'cat', // reference the image
-'icon-size': 0.25
+'icon-image': 'doc-icon', // reference the image
+'icon-size': 1
 }
 });
 }
