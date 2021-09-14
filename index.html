@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MedHouse Nepal</title>
     <link rel="stylesheet" href="public/css/tailwind.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
     <div class="pt-24 bg-gray-50">
@@ -45,6 +47,7 @@
             <button class="bg-red-500 text-white py-2 px-24 rounded-md hover:bg-red-700">Search</button>
         </div>
     </section>
+    <div id='map' style='width: 400px; height: 300px;'></div>
     <footer>
         <div class="flex justify-center bg-gray-500 text-white text-xs p-3">
             <p>2021 All rights reserved &#169; MedHouse</p>
@@ -52,5 +55,66 @@
     </footer>
     </div>
     <script src="txslider.js"></script>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibWltb25ha2Fya2k3IiwiYSI6ImNrdGpraDhnNTFkMnIydW11bjcwOG1lb2gifQ.gMN4VxmwloNrtpoPsqpn2w';
+        const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [85.32,27.71], // starting position [lng, lat]
+        zoom: 15 // starting zoom
+        });
+        map.addControl(
+    new mapboxgl.GeolocateControl({
+    positionOptions: {
+    enableHighAccuracy: true
+    },
+// When active the map will receive updates to the device's location as it changes.
+    trackUserLocation: true,
+// Draw an arrow next to the location dot to indicate which direction the device is heading.
+    showUserHeading: true
+})
+);
+map.on('load', () => {
+// Load an image from an external URL.
+map.loadImage(
+'https://images.unsplash.com/photo-1560582861-45078880e48e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
+(error, image) => {
+if (error) throw error;
+ 
+// Add the image to the map style.
+map.addImage('cat', image);
+ 
+// Add a data source containing one point feature.
+map.addSource('point', {
+'type': 'geojson',
+'data': {
+'type': 'FeatureCollection',
+'features': [
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [-77.4144, 25.0759]
+}
+}
+]
+}
+});
+ 
+// Add a layer to use the image to represent the data.
+map.addLayer({
+'id': 'points',
+'type': 'symbol',
+'source': 'point', // reference the data source
+'layout': {
+'icon-image': 'cat', // reference the image
+'icon-size': 0.25
+}
+});
+}
+);
+});
+</script>
+
 </body>
 </html>
