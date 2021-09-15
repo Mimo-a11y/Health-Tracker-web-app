@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="css/tailwind.css">
+</head>
+<body>
+    <div class="pt-24 bg-gray-50">
+        <header>
+            <nav class="flex flex-wrap items-center justify-between py-6 px-6 bg-white shadow-lg fixed inset-x-0 top-0">
+               <div class="h-12">
+                   <img class="h-14" src="../images/medhouse logo.png" alt="MedHouse Nepal" width="180">
+               </div>
+               <div class="mt-2.5 space-x-8">
+                   <a href="../index.html" class="text-green-600 hover:text-red-700">Home</a>
+                   <a href="public/about.html" class="text-green-600 hover:text-red-700" >About Us</a>
+                   <a href="#" class="text-green-600 hover:text-red-700">Health Log</a>
+                   <a href="register.html" class="text-green-600 hover:text-red-700">register</a>
+                   <a href="#" class="text-gray-50  hover:bg-red-700 bg-red-500 px-5 py-3">Login</a>
+               </div> 
+            </nav>
+        </header>
+        <div class="flex justify-center pt-6">
+            <div class="flex flex-col w-2/5 p-5 items-center bg-white shadow-lg rounded-md">
+                <h1 class="text-3xl font-semibold">Create Account</h1>
+                <h2 class="text-1xl mt-3">Get started with your free account</h2>
+                <button class="bg-gray-300 text-black py-2 px-28 rounded-md hover:bg-gray-400 mt-5">Login via Gmail</button>
+                <button class="bg-blue-500 text-white py-2 px-24 rounded-md hover:bg-blue-700 mt-3">Login via Facebook</button>
+                <h1 class="text-2xl mt-3">or</h1>
+                <div>
+                    <form action="">
+                        <label for="fullname" class="mt-5">Full name</label><br>
+                        <input type="text" id="fullname" name="fname" class="bg-gray-200"><br>
+                        <label for="email" class="mb-5">Email</label><br>
+                        <input type="email" id="email" name="emailAdd"  class="bg-gray-200"><br>
+                        <label for="phnumber">Phone number</label><br>
+                        <input type="text" id="phnumber" name="phone"  class="bg-gray-200"><br>
+                        <label for="userType" class="mt-5">Type</label><br>
+                        <input type="text" id="userType" name="type" class="bg-gray-200"><br>
+                        <label for="loc">Location</label><br>
+                        <input type="text" id="loc" name="Location"  class="bg-gray-200"><br>
+                        <label for="createPw">Create Password</label><br>
+                        <input type="password" id="createPw" name="createPassword"  class="bg-gray-200"><br>
+                        <label for="confirmPw">Confirm Password</label><br>
+                        <input type="password" id="confirmPw" name="confirmPassword"  class="bg-gray-200"><br>
+                        <button class="bg-red-500 text-white py-2 px-24 rounded-md hover:bg-red-700 mt-5">Create account</button>
+                        
+                    </form>
+                </div>  
+            </div>
+        </div>
+        <footer>
+            <div class="flex justify-center bg-gray-500 text-white text-xs p-3 mt-11">
+                <p>2021 All rights reserved &#169; MedHouse</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
